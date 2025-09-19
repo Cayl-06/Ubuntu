@@ -1,6 +1,4 @@
-
-package activity11;
-
+package encapChallenge1;
 public class Triangle{
     private float base;
     private float height;
@@ -8,34 +6,32 @@ public class Triangle{
     
     
     public Triangle(){
-        this.base = base;
-        this.height = height;
-        this.area = area;
+        this.base = 0;
+        this.height = 0;
+        this.area = 0;
     }
     
     public void setBase(float base){
         if(base <= 0){
             System.out.println("Error: Base must be a positive number.");
             base = 0;
-        } else
-        this.base = base;
+        } else{
+        this.base = base;}
+        calculateArea();
     }
     public void setHeight(float height){
         if(height <= 0){
             System.out.println("Error: Height must be a positive number.");
             height = 0;
-        } else
-        this.height = height;
+        } else{
+        this.height = height; }
+        calculateArea();
     }
     
-    private float calculateArea(float base, float height){
-        float res = base * height;
-        return res / 2;
+    private void calculateArea(){
+        this.area = (this.base * this.height) / 2;
     }
     
-    public void setArea(float result){
-        this.area = result;
-    }
     
     public float getBase(){
         return base;
@@ -44,8 +40,8 @@ public class Triangle{
         return height;
     }
     public float getArea(){
-        return calculateArea(base, height);
+        return area;
     }
-    
+
     
 }
