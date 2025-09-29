@@ -16,19 +16,18 @@ public class Main {
         sc.close();
     }
 }
-//1. super class rectangle which contains private variables
-//2. setters and getters
-//3. function that returns the area and perimeter formula of rectangle
 class Rectangle {
+    //1. super class rectangle which contains private variables
     private int length;
     private int width;
 
-    public Rectangle(int length, int width) {
+//1.1 constructor for superclass
+    public Rectangle(int length, int width){
         this.length = length;
         this.width = width;
-        System.out.println("Rectangle Constructor");
     }
 
+//2. public setters and getters
     public void setLength(int length) {
         this.length = length;
     }
@@ -44,36 +43,39 @@ class Rectangle {
     public int getWidth() {
         return width;
     }
+    
 
-    public int area() {
-        System.out.println("Rectangle Area");
+//3. method that prints the name of the solution returns the area and perimeter formula of rectangle
+    public void area() {
+        System.out.println("Reectangle area: ");
         return length * width;
     }
 
-    public int perimeter() {
-        System.out.println("Rectangle Perimeter");
+    public void perimeter() {
+        System.out.println("Rectangle perimeter: ");
         return 2 * (length + width);
     }
+
+
 }
 
 class Square extends Rectangle {
-    //constructor that uses the super class constructor and prints the new constructor shape name
+//constructor that uses the super class constructor and prints the new constructor shape name
     public Square(int side) {
         super(side, side);
-        System.out.println("Square Constructor");
+        System.out.println("Square Constructor: ");
     }
 
-    //method that prints the new shape area and uses the public getter to get the private
-    //value from the superclass
-    @Override
-    public int area() {
-        System.out.println("Square Area");
+//2 method that prints the new shape area (l x l) and perimeter (4 * L) and uses the public getter to get the private value from the superclass
+   @Override
+   public void area() {
+        System.out.println("Square area: ");
         return getLength() * getLength();
-    }
+   }
 
-    @Override
-    public int perimeter() {
-        System.out.println("Square Perimeter");
-        return 4 * getLength();
-    }
+   @Override
+   public void perimeter() {
+    System.out.println("Square perimeter: ");
+    return 4 * (getLength() + getWidth());
+   }
 }
