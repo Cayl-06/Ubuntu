@@ -36,5 +36,6 @@ public class Road {
         System.out.println("Vehicle on the road:");
         vehicle.accelerate();
         vehicle.decelerate();
+        System.out.println("End...");
     }
 }
